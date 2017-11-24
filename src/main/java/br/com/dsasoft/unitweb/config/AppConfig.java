@@ -2,13 +2,11 @@ package br.com.dsasoft.unitweb.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@ComponentScan(basePackages = { "br.com.dsasoft.unitweb.config" })
 @PropertySource(value = "classpath:app.config.properties")
 public class AppConfig {
 
