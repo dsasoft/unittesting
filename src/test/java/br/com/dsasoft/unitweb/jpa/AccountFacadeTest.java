@@ -52,7 +52,7 @@ public class AccountFacadeTest {
 	}
 
 	@Test
-	public void findByName() {
+	public void findById() {
 		Account retrieved = em.find(Account.class, fakeAccount.getId());
 
 		assertEquals(fakeAccount, retrieved);
