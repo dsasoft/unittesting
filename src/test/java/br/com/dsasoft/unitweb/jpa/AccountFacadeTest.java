@@ -59,9 +59,9 @@ public class AccountFacadeTest {
 
 		assertEqualsMethod(fakeAccount, retrieved);
 		
-		assertNames(fakeAccount, retrieved);
+		assertEqualsNames(fakeAccount, retrieved);
 		
-		assertBalance(fakeAccount, retrieved);
+		assertEqualsBalance(fakeAccount, retrieved);
 		
 		assertEqualsHashCode(fakeAccount, retrieved);
 	}
@@ -74,11 +74,11 @@ public class AccountFacadeTest {
 		assertEquals(arg0.equals(arg1), arg1.equals(arg0));
 	}
 	
-	private void assertNames(Account arg0, Account arg1){
+	private void assertEqualsNames(Account arg0, Account arg1){
 		assertEquals(arg0.getName(), arg1.getName());
 	}
 	
-	private void assertBalance(Account arg0, Account arg1){
+	private void assertEqualsBalance(Account arg0, Account arg1){
 		assertEquals(arg0.getBalance(), arg1.getBalance());
 	}
 	
@@ -88,7 +88,7 @@ public class AccountFacadeTest {
 	}
 	
 	@Test
-	public void assertDifferentPersistedEntities(){
+	public void assertNotEqualsAccounts(){
 		Account actual = new Account("Wallet", new BigDecimal(0.0d));
 		em.persist(actual);
 		assertNotEquals(fakeAccount, actual);
@@ -96,7 +96,7 @@ public class AccountFacadeTest {
 	}
 	
 	@Test
-	public void assertNotEqualsAccountNullId(){
+	public void assertNotEqualsPersistedAndNonPersistedAccount(){
 		Account actual = new Account("Wallet", new BigDecimal(0.0d));
 		assertNotEquals(actual, fakeAccount);
 		assertNotEquals(fakeAccount.hashCode(), actual.hashCode());

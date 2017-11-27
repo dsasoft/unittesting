@@ -37,11 +37,6 @@
 			<version>2.4.0</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>hsqldb</groupId> -->
-		<!-- <artifactId>hsqldb</artifactId> -->
-		<!-- <version>1.8.0.10</version> -->
-		<!-- </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
 		<dependency>
