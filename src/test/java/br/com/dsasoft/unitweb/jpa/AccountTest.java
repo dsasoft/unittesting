@@ -16,7 +16,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AccountFacadeTest {
+public class AccountTest {
 
 	private static final String PERSISTENCE_UNIT = "em-test";
 
@@ -52,7 +52,7 @@ public class AccountFacadeTest {
 	}
 
 	@Test
-	public void findById() {
+	public void findByIdMakeAssertions() {
 		Account retrieved = em.find(Account.class, fakeAccount.getId());
 
 		assertEquals(fakeAccount, retrieved);
