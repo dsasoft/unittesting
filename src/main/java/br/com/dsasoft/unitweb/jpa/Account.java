@@ -15,7 +15,7 @@ public class Account {
 
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@Column(name = "NAME")
@@ -24,8 +24,11 @@ public class Account {
 	@Column(name = "BALANCE")
 	private BigDecimal balance;
 
-	public Account(String name, BigDecimal balance) {
+	public Account() {
 		super();
+	}
+
+	public Account(String name, BigDecimal balance) {
 		this.name = name;
 		this.balance = balance;
 	}

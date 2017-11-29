@@ -22,14 +22,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>3.5.1</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>

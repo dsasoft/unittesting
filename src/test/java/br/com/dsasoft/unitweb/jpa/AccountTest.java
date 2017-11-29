@@ -5,10 +5,12 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -41,9 +43,17 @@ public class AccountTest {
 
 	private void persistFakeAccount() {
 		fakeAccount = new Account("Wallet", new BigDecimal(0.0d));
-		System.out.println(fakeAccount);
 		em.persist(fakeAccount);
-		System.out.println(fakeAccount);
+	}
+	
+	@Test
+	public void listAll(){
+		Query query = em.createQuery("SELECT a FROM Account a");
+		
+		List<?> rs = query.getResultList();
+		
+		for(int i = 0; i < rs.size(); i++)
+			System.out.println(rs.get(i));
 	}
 
 	@Test
